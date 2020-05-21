@@ -31,6 +31,7 @@ public class Yate extends EmbarcacionAMotor {
      * el de la potencia.
      * @return
      */
+    @Override
     public int calcularBernua() {
         return (numCamarotes+super.getPotencia());
     }

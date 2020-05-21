@@ -26,6 +26,7 @@ public class EmbarcacionAMotor extends Barco {
      * el de la potencia.
      * @return
      */
+    @Override
     public int calcularBernua() {
         return potencia;
     }

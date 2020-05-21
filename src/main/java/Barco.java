@@ -1,4 +1,4 @@
-public class Barco {
+public abstract class Barco {
 
     //Matricula del barco
     private String matricula;
@@ -67,7 +67,5 @@ public class Barco {
      * el de la potencia.
      * @return
      */
-    public int calcularBernua() {
-        return 1;
-    }
+    public abstract int calcularBernua();
 }
