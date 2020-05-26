@@ -79,7 +79,19 @@ public class Puerto {
     public int precioAlquiler(int numDias, Barco barco) {
         int precio = 0;
         precio += numDias*(10*barco.getEslora());
-        precio += 300*barco.calcularBernua();
+        //precio += 300*barco.calcularBernua();
+        if(barco instanceof Velero) {
+            Velero velero = (Velero)barco;
+            precio += 300*velero.getNumMastiles();
+        }
+        else if(barco instanceof Yate) {
+            Yate yate = (Yate)barco;
+            precio += 300*(yate.getNumCamarotes() + yate.getPotencia());
+        }
+        else if(barco instanceof EmbarcacionAMotor) {
+            EmbarcacionAMotor emMotor = (EmbarcacionAMotor)barco;
+            precio += 300*emMotor.getPotencia();
+        }
         return precio;
     }
 
