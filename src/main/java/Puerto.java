@@ -7,6 +7,10 @@ public class Puerto {
     private ArrayList<Amarre> amarres;
     //Guarda los amarres que están alquilados
     private ArrayList<Amarre> amerresAlquilados;
+    //Variable constante que sirve para el calculo de bernua para el preicio de alquiler
+    private static final int BERNUA = 300;
+    //Variable constante que guarda el precio por metro de eslora
+    private static final int METRO_ESLORA = 10;
 
     /**
      * Contructor de la clase Puerto que crea
@@ -78,8 +82,8 @@ public class Puerto {
      */
     public int precioAlquiler(int numDias, Barco barco) {
         int precio = 0;
-        precio += numDias*(10*barco.getEslora());
-        precio += 300*barco.calcularBernua();
+        precio += numDias*(METRO_ESLORA*barco.getEslora());
+        precio += BERNUA*barco.calcularBernua();
         return precio;
     }
 
