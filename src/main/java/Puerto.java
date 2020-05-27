@@ -11,6 +11,7 @@ public class Puerto {
     private static final int BERNUA = 300;
     //Variable constante que guarda el precio por metro de eslora
     private static final int METRO_ESLORA = 10;
+    private static final int PRECIO_POR_DEFECTO = -1;
 
     /**
      * Contructor de la clase Puerto que crea
@@ -47,7 +48,7 @@ public class Puerto {
      * @return
      */
     public int alquilarAmarre(int numDias, Barco barco) {
-        int precioAlquiler = -1;
+        int precioAlquiler = PRECIO_POR_DEFECTO;
         Amarre amarre = amarreDisponible();
         if(amarre != null) {
             amarres.remove(amarre);
@@ -93,7 +94,7 @@ public class Puerto {
      * @return
      */
     public int liquidarAlquilerAmarre(int numAmarre) {
-        int precioAlquiler = -1;
+        int precioAlquiler = PRECIO_POR_DEFECTO;
         for (int i = 0; i < amerresAlquilados.size(); i++) {
             boolean amarreAlquilado = false;
             Amarre amarre = amerresAlquilados.get(i);
